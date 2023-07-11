@@ -26,7 +26,6 @@ function App() {
           <Route path="/new/recipe" element={<NewRecipe />} />
           <Route path="/one/recipe/:id" element={<OneRecipe />} />
           <Route path="/update/recipe/:id" element={<EditRecipe />} />
-          <Route path="/search" element={<SearchResults />} />
         </Routes>
       </BrowserRouter>
     </div>

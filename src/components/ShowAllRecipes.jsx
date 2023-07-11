@@ -108,8 +108,8 @@ const ShowAllRecipes = (props) => {
               <Card.Title style={{textAlign: "center",             fontFamily: 'Amatic SC',
             fontWeight: 'bold', fontSize: "30px"}}>{recipe.recipeName}</Card.Title>
               <Card.Text>
-                <p>{recipe.recipeIngredients}</p>
-                <p>{recipe.recipeInstructions}</p>
+                <span>{recipe.recipeIngredients}</span>
+                <span>{recipe.recipeInstructions}</span>
               </Card.Text>
 
             </Card.Body>

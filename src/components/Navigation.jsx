@@ -30,6 +30,7 @@ const Navigation = () => {
             fontFamily: 'Amatic SC',
             fontWeight: 'bold',
             fontSize: '30px',
+            paddingLeft: "20px"
           }}
         >
           My Virtual Cookbook

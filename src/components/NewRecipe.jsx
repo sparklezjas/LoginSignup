@@ -46,7 +46,12 @@ return (
             fontSize: "40px",
             }}>Add a New Recipe</h2>
           </div>
-      <div>
+      <div style={{    width: '100vw',
+
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'}}>
           <form
           onSubmit={submitHandler}>
           <label style={{

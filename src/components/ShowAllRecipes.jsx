@@ -4,14 +4,23 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import background from "../imgs/cooking.jpg";
+import { useAuthContext } from '../hooks/useAuthContext';
 
 const ShowAllRecipes = (props) => {
   const [allRecipes, setAllRecipes] = useState([]);
   const [sortOrder, setSortOrder] = useState();
+  const {user} = useAuthContext()
 
   useEffect(() => {
+    if(!user){
+      return
+    }
     axios
-      .get('http://localhost:4000/api/all/recipes')
+      .get('http://localhost:4000/api/all/recipes', {
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      })
       .then((res) => {
         console.log(res);
         setAllRecipes(res.data);
@@ -19,7 +28,7 @@ const ShowAllRecipes = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     const recipeOrder = [...allRecipes].sort((first, last) => {
